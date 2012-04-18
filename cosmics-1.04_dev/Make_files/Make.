@@ -1,0 +1,15 @@
+#
+# Compiler options for generic unix.
+#
+# changed 29.09. compiler to gfortran
+#
+F77 = ifort
+F77FLAGS = -O -fPIC -shared-intel -mcmodel=large
+FFT_OBJ = fft3r.o
+LIBS =
+#
+#
+CC = cc
+CFLAGS = -O
+#
+#
