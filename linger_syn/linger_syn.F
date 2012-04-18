@@ -40,6 +40,7 @@ c  moments.
 	integer kdone(nkmax)
 c
 	common /starter/ taumax,dk,dlk,akmin,nk,lmax1,ifulbol,kdone
+
 c
 c  Dverk parameters.
 	parameter (tol=1.0d-8,nw=nvar0)
@@ -258,6 +259,17 @@ c  Internal variables.
 	save /store/
 c
 	external dtauda
+
+c___________________________________________________________________
+
+	write(*,*) '	'
+	write(*,*) '	'
+	write(*,*) '>>>>>    MAKE SURE YOU START THE PROGRAM WITH'
+	write(*,*) '>>>>>    $./linger_syn | tee lingersynIO.out'
+	write(*,*) '	'
+	write(*,*) '	'
+c____________________________________________________________________
+
 c
 c  Read initial parameters.
 1	write(*,*)

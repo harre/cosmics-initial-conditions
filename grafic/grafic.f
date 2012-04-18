@@ -20,8 +20,9 @@ c
 	write(*,*) 'Particle lattice size: np1,np2,np3=',np1,np2,np3
 c
 	write(*,*) 'Enter dx (Mpc, =1 for scale-free), epsilon (Mpc,',
-     &             ' =0 for PM), etat (=0.05)'
+     &             ' =0 for PM), etat (=0.05)'	
 	read(*,*) dx,epsilon,etat
+	write(*,*) 'chosen:', dx,epsilon,etat
 	write(*,1001) 'npart, L_x, L_y, L_z=',npart,np1*dx,np2*dx,
      2             np3*dx,' Mpc'
 1001	format(1x,a21,i9,3(2x,f7.2),a4)
@@ -31,12 +32,14 @@ c
 c  Choose your own random number seed.
 	write(*,*) 'Enter random number seed (9-digit integer)'
 	read(*,*) iseed
+	write(*,*) 'chosen:', iseed 
 	call randini(iseed)
 	write(*,*) 'Enter ido (=1,2,3) for action:'
 	write(*,*) '  ido=1 Compute unconstrained realization'
 	write(*,*) '  ido=2 Compute mean field of constraints'
 	write(*,*) '  ido=3 Compute constrained realization'
 	read(*,*) ido
+	write(*,*) 'chosen:', ido 
 	if (ido.lt.1.or.ido.gt.3) stop
 	if (ido.gt.1) then
 	  write(*,*)
@@ -135,7 +138,7 @@ c  Output delta.dat file.
 	write(10) (delta(j),j=1,npart)
 	close(10)
 c  Output p3m.dat file.
-	open(10,file='p3m.dat',status='unknown',form='unformatted')
+	open(10,file='p3m_h100.dat',status='unknown',form='unformatted')
 	rewind 10
 	write(10) npart,np1,np2,np3,dx,epsilon,astart,omegam,omegav,h0,
      2                  dt,etat,nstep,ekin,egrav,egint

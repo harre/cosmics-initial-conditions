@@ -1,0 +1,17 @@
+ 	
+ 	
+ >>>>>    MAKE SURE YOU START THE PROGRAM WITH
+ >>>>>    $./linger_syn | tee lingersynIO.out
+ 	
+ 	
+ Enter Omega_b, Omega_c, Omega_v, Omega_nu (e.g. .044 .226 .73 0)
+ Enter H0, Tcmb, Y_He, N_nu(massive) (e.g. 71 2.725 0.248 0)
+ Enter 1 for full Boltzmann equation for CMB (lmax<=10000, linear k)
+    or 0 for matter transfer functions only (lmax=100, log k)
+ Enter kmin (1/Mpc), kmax (1/Mpc), nk, zend
+ Initial conditions cases:
+     1 for isentropic (adiabatic) fluctuations,
+     2 for cdm entropy/isocurvature fluctuations, or
+     3 for baryon entropy/isocurvature fluctuations, or
+     4 for seed/isocurvature fluctuations
+ Enter 1, 2, 3, or 4 now

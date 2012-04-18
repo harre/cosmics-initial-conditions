@@ -1,7 +1,9 @@
 #
 # Compiler options for generic unix.
 #
-F77 = f77
+# changed 29.09. compiler to gfortran
+#
+F77 = gfortran
 F77FLAGS = -O
 FFT_OBJ = fft3r.o
 LIBS =

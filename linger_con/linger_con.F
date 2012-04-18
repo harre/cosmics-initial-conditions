@@ -388,7 +388,8 @@ c  If it does, check that it has the correct parameters.
 	err=e1+e2+e3+e4+e5+e6+e7
 	if (err.gt.1.0d-4.or.nnur1.ne.nnur.or.nnunr1.ne.nnunr.or.
      &      initfl1.ne.initfl) then
-	  write(*,*) 'linger.dat file does not match input parameters'
+	  write(*,*) 'linger.dat file written cosm. ...'
+	  write(*,*) 'HOTFIX 27.10.2011, hh'
 	  write(*,*) 'input: ',omegab,omegac,omegav,omegan,h0,
      &                tcmb,yhe,nnur,nnunr,initfl
 	  write(*,*) 'output: ',omegab1,omegac1,omegav1,omegan1,h01,

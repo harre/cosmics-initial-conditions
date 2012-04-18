@@ -186,17 +186,27 @@ c
 	iwarn1=0
 	iwarn2=0
 c
-1	write(*,*) 'Select type of initial power spectrum',
-     &              ' (matter transfer function):'
-	write(*,*) '    1 for T(k) from linger.dat'
-	write(*,*) '    2 for T(k) from approx. analytical fit'
-	write(*,*) '    3 for T(k)=1 (scale-free)'
-	write(*,*) 'Enter case (1,2,3) now:'
-	read(*,*) icase
-	if (icase.eq.1) then
-	  write(*,*) 'Enter linger.dat filename'
-	  read(*,'(a)') filename
-	  open(10,file=filename,status='old')
+c___________________________________________________________________
+
+	write(*,*) '	'
+	write(*,*) '	'
+	write(*,*) '>>>>>    MAKE SURE YOU START THE PROGRAM WITH'
+	write(*,*) '>>>>>    $./grafic | tee graficIO.out'
+	write(*,*) '	'
+	write(*,*) '	'
+c____________________________________________________________________
+! 1	write(*,*) 'Select type of initial power spectrum',
+!      &              ' (matter transfer function):'
+! 	write(*,*) '    1 for T(k) from linger.dat'
+! 	write(*,*) '    2 for T(k) from approx. analytical fit'
+! 	write(*,*) '    3 for T(k)=1 (scale-free)'
+! 	write(*,*) 'Enter case (1,2,3) now:'
+! 	read(*,*) icase
+! 	if (icase.eq.1) then
+! 	  write(*,*) 'Enter linger.dat filename'
+! 	  read(*,'(a)') filename
+	  write(*,*) 'Power spectrum taken from linger.dat'
+	  open(10,file='linger_h100n216.dat',status='old')
 	  rewind 10
 	  read(10,*) omegab,omegac,omegav,omegan
 	  read(10,*) h0,tcmb,yhe,nnur,nnunr,initfl
@@ -209,30 +219,31 @@ c
 	  ok=1.0d0-om-ov
 c  Tcmb in micro-K.
 	  tcmb=tcmb*1.e6
-	else if (icase.eq.2.or.icase.eq.3) then
-	  tcmb=2.726e6
-	  write(*,*) 'Enter Omega_m, Omega_v, H0 (km/s/Mpc,',
-     &               ' set H0=1 for scale-free case)'
-	  read(*,*) omegam,omegav,h0
-	  om=omegam
-	  ov=omegav
-	  ok=1.0d0-om-ov
-	else
-	  write(*,*) 'Illegal choice.  Try again:'
-	  go to 1
-	end if
+! 	else if (icase.eq.2.or.icase.eq.3) then
+! 	  tcmb=2.726e6
+! 	  write(*,*) 'Enter Omega_m, Omega_v, H0 (km/s/Mpc,',
+!      &               ' set H0=1 for scale-free case)'
+! 	  read(*,*) omegam,omegav,h0
+! 	  om=omegam
+! 	  ov=omegav
+! 	  ok=1.0d0-om-ov
+! 	else
+! 	  write(*,*) 'Illegal choice.  Try again:'
+! 	  go to 1
+! 	end if
 c
-	write(*,*) 'Enter long-wave spectral index n (scale-invariant',
-     &             ' is n=1)'
-	read(*,*) an
+! 	write(*,*) 'Enter long-wave spectral index n (scale-invariant',
+!      &             ' is n=1)'
+	write(*,*) 'Spectral index is n=0.963)'
+	an=0.963
 c
-	write(*,*) 'Enter desired normalization at a=1:'
-	if (icase.eq.1.or.icase.eq.2) then
-	  write(*,*) 'Qrms-ps/micro-K (if > 0) or -sigma_8 (if < 0) = ?'
-	else
-	  write(*,*) 'k^3*P(k) at k=pi = ?'
-	end if
-	read(*,*) anorml
+	write(*,*) 'Desired normalization at a=1 is -0.802'
+! 	if (icase.eq.1.or.icase.eq.2) then
+! 	  write(*,*) 'Qrms-ps/micro-K (if > 0) or -sigma_8 (if < 0) = ?'
+! 	else
+! 	  write(*,*) 'k^3*P(k) at k=pi = ?'
+! 	end if
+	anorml=-0.802
 c
 c**************************************
 c  Scale-free case.  pnorm is the power at the Nyquist frequency for
@@ -364,25 +375,25 @@ c  radius 8/h Mpc.  Compute corresponding Qrms-ps.
 	  write(*,*) 'Qrms-ps/micro-K=',qrmsps
 	end if
 
-	write(*,*)
-	write(*,*) 'I can write the power spectrum of delta_rho/rho',
-     &             ' to disk (power.dat).'
-	write(*,*) 'If you would like this, please enter kmin and',
-     &             ' kmax (1/Mpc)'
-	write(*,*) 'Enter 0,0 if you don''t want the power spectrum',
-     &             ' written to a file'
-	read(*,*) ak1,ak2
-	if (ak1.le.0.0.or.ak2.le.0.0) return
-	nkplot=201
-	dlkp=log(ak2/ak1)/(nkplot-1)
-	open(12,file='power.dat',form='formatted',status='unknown')
-	rewind 12
-	write(12,*) an,anorml
-	do i=1,nkplot
-	  ak0=ak1*exp((i-1)*dlkp)
-	  write(12,*) ak0,p(ak0)
-	end do
-	close(12)
+! 	write(*,*)
+! 	write(*,*) 'I can write the power spectrum of delta_rho/rho',
+!      &             ' to disk (power.dat).'
+! 	write(*,*) 'If you would like this, please enter kmin and',
+!      &             ' kmax (1/Mpc)'
+! 	write(*,*) 'Enter 0,0 if you don''t want the power spectrum',
+!      &             ' written to a file'
+! 	read(*,*) ak1,ak2
+! 	if (ak1.le.0.0.or.ak2.le.0.0) return
+! 	nkplot=201
+! 	dlkp=log(ak2/ak1)/(nkplot-1)
+! 	open(12,file='power.dat',form='formatted',status='unknown')
+! 	rewind 12
+! 	write(12,*) an,anorml
+! 	do i=1,nkplot
+! 	  ak0=ak1*exp((i-1)*dlkp)
+! 	  write(12,*) ak0,p(ak0)
+! 	end do
+! 	close(12)
 
 	return
 	end

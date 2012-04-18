@@ -1,0 +1,16 @@
+#
+# Compiler options for Linux.
+#
+# changed 27.09.2011: compiler g77 replaced by gfortran
+#
+F77 = ifort
+F77FLAGS = -O2 -parallel -par-report1 -openmp
+FFT_OBJ = fft3r.o
+LIBS =
+#
+#
+CC = icc
+CFLAGS = -O2 -parallel -par-report1 -openmp
+#
+#
+  CPP = cc
