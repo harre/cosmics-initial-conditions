@@ -205,8 +205,8 @@ c____________________________________________________________________
 ! 	if (icase.eq.1) then
 ! 	  write(*,*) 'Enter linger.dat filename'
 ! 	  read(*,'(a)') filename
-	  write(*,*) 'Power spectrum taken from linger.dat'
-	  open(10,file='linger_h100n216.dat',status='old')
+	  write(*,*) 'Power spectrum taken from linger_h100n1111log.dat'
+	  open(10,file='linger_h100n1111log.dat',status='old')
 	  rewind 10
 	  read(10,*) omegab,omegac,omegav,omegan
 	  read(10,*) h0,tcmb,yhe,nnur,nnunr,initfl

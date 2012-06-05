@@ -2,7 +2,7 @@ c  Parameters for grafic.  User must set np1,np2,np3,ncon.
 c  ** Important: if no constraints are desired, set ncon=1 **
 c  ** (not 0) and input ido=1. **
 c
-	parameter (np1=256,np2=256,np3=256,ncon=3)
+	parameter (np1=256,np2=256,np3=256,ncon=4)
 c
 	parameter (npart=np1*np2*np3)
 c

@@ -1,0 +1,56 @@
+ 	
+ 	
+ >>>>>    MAKE SURE YOU START THE PROGRAM WITH
+ >>>>>    $./grafic | tee graficIO.out
+ 	
+ 	
+ Power spectrum taken from linger_MTFh100n100log.dat
+ Omegab,c,v,n=  4.5100000E-02  0.2260000      0.7290000      0.0000000E+00
+ H0,Tcmb,Y,Nnur,Nnunr,initfl=   100.0000       2.725000      0.2475000    
+           3           0           1
+ Spectral index is n=0.963)
+ Desired normalization at a=1 is -0.802
+ Warning: extrapolating k beyond kmax of linger.dat
+          ak,akmax=   12.50000       1.00000034222216     
+ Qrms-ps/micro-K=   14.49336    
+ Particle lattice size: np1,np2,np3=         256         256         256
+ Enter dx (Mpc, =1 for scale-free), epsilon (Mpc, =0 for PM), etat (=0.05)
+ chosen:  0.1250000      0.0000000E+00  5.0000001E-02
+ npart, L_x, L_y, L_z= 16777216    32.00    32.00    32.00 Mpc
+ Particle mass= .1470E+09 solar masses
+ Enter random number seed (9-digit integer)
+ chosen:   334430009
+ Enter ido (=1,2,3) for action:
+   ido=1 Compute unconstrained realization
+   ido=2 Compute mean field of constraints
+   ido=3 Compute constrained realization
+ chosen:           3
+ Make sure you have provided constraints in subroutine constr
+ 
+ For unconstrained field at a=1:
+      Mean sigma_delta, sigma_psi=   8.294861       5.125645      Mpc
+      Chisq, dof, nu=  1.6766335E+07    16777215  -1.878228    
+ 
+ Constraint   1:  Sampled, desired= 0.48246313E-01 0.40000001    
+ Constraint   2:  Sampled, desired= 0.71364097E-01 0.34999999    
+ Constraint   3:  Sampled, desired= 0.89355633E-01 0.30000001    
+ Constraint   4:  Sampled, desired= 0.10218412     0.25000000    
+ 
+ Chi-square for the   4 constraints:
+      Sampled, desired=   1.019020       11.33795    
+ 
+ Computing a constrained realization
+ Constraint   1:  Final= 0.39411843    
+ Constraint   2:  Final= 0.34398535    
+ Constraint   3:  Final= 0.29401535    
+ Constraint   4:  Final= 0.24419039    
+ 
+ For random realization at a=1:
+      sigma_delta, sigma_psi=   8.312473       5.850522      Mpc
+      Chisq, dof=  1.6766334E+07    16777211
+      Maximum delta, displacement=   48.46703       16.36175      Mpc
+ 
+ Scaling density and displacements to a=  1.5697688E-02
+ 
+ For a=astart: linear sigma, delmax=  0.1715078      0.9999999    
+ RMS, max. 3-D displacement=  0.1207114      0.3375852      Mpc

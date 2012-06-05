@@ -18,7 +18,7 @@ c
 c  Here follows an example: two constraints: a cluster and a void.
 c  The constraints are set by the value of delta averaged over a
 c  gaussian ball of smoothing radius 20 Mpc.
-          grad=25.0/dx
+          grad=(10.0+1.0*REAL(i-1))/dx
           do 5 i=1,ncon
           do 5 j=1,2*nmax
           con(j,i)=0.0
@@ -36,10 +36,14 @@ c  N.B. this is the linear density contrast, which may be less than -1.0.
 c            delta=0.3
 c          else
 c  Constraint: cluster centered in the middle of the box.
-	    x1c=(0.5+0.05*REAL(i-1))*np1
-	    y1c=(0.5+0.05*REAL(i-1))*np2
-	    z1c=(0.5-0.05*REAL(i-1))*np3
-            delta=0.2
+	    x1c=(0.5+0.03*REAL(i-1))*np1
+	    y1c=(0.5-0.04*REAL(i-1))*np2
+	    z1c=(0.5-0.03*REAL(i-1))*np3
+            delta=0.4-0.05*REAL(i-1)
+! 	    x1c=(0.51)*np1
+! 	    y1c=(0.48)*np2
+! 	    z1c=(0.52)*np3
+!             delta=0.5
 c          end if
           g(i)=0.0
           j=0

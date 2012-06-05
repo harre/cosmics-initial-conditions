@@ -5,13 +5,21 @@
  	
  	
  Enter Omega_b, Omega_c, Omega_v, Omega_nu (e.g. .044 .226 .73 0)
+  Chosen:   4.510000000000000E-002  0.226000000000000     
+  0.729000000000000       0.000000000000000E+000
  Enter H0, Tcmb, Y_He, N_nu(massive) (e.g. 71 2.725 0.248 0)
+  Chosen:    100.000000000000        2.72500000000000     
+  0.247500000000000                0
  Enter 1 for full Boltzmann equation for CMB (lmax<=10000, linear k)
     or 0 for matter transfer functions only (lmax=100, log k)
+  Chosen:            0
  Enter kmin (1/Mpc), kmax (1/Mpc), nk, zend
+  Chosen:   1.000000000000000E-006   10.0000000000000             1111
+  0.000000000000000E+000
  Initial conditions cases:
      1 for isentropic (adiabatic) fluctuations,
      2 for cdm entropy/isocurvature fluctuations, or
      3 for baryon entropy/isocurvature fluctuations, or
      4 for seed/isocurvature fluctuations
  Enter 1, 2, 3, or 4 now
+  Chosen:            1

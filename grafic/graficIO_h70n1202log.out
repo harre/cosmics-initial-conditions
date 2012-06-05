@@ -1,0 +1,54 @@
+ 	
+ 	
+ >>>>>    MAKE SURE YOU START THE PROGRAM WITH
+ >>>>>    $./grafic | tee graficIO.out
+ 	
+ 	
+ Power spectrum taken from linger.dat
+ Omegab,c,v,n=  4.4900000E-02  0.2220000      0.7331000      0.0000000E+00
+ H0,Tcmb,Y,Nnur,Nnunr,initfl=   70.30000       2.752000      0.2480000    
+           3           0           2
+ Spectral index is n=0.963)
+ Desired normalization at a=1 is -0.802
+ Qrms-ps/micro-K=   295.0200    
+ Particle lattice size: np1,np2,np3=         256         256         256
+ Enter dx (Mpc, =1 for scale-free), epsilon (Mpc, =0 for PM), etat (=0.05)
+ chosen:  0.1250000      0.0000000E+00  5.0000001E-02
+ npart, L_x, L_y, L_z= 16777216    32.00    32.00    32.00 Mpc
+ Particle mass= .7152E+08 solar masses
+ Enter random number seed (9-digit integer)
+ chosen:   519181614
+ Enter ido (=1,2,3) for action:
+   ido=1 Compute unconstrained realization
+   ido=2 Compute mean field of constraints
+   ido=3 Compute constrained realization
+ chosen:           3
+ Make sure you have provided constraints in subroutine constr
+ 
+ For unconstrained field at a=1:
+      Mean sigma_delta, sigma_psi=   2.067374       3.775092      Mpc
+      Chisq, dof, nu=  1.6776725E+07    16777215 -8.4563985E-02
+ 
+ Constraint   1:  Sampled, desired= 0.12788142     0.30000001    
+ Constraint   2:  Sampled, desired= 0.12181475     0.25000000    
+ Constraint   3:  Sampled, desired= 0.10607174     0.20000002    
+ Constraint   4:  Sampled, desired= 0.81288032E-01 0.15000001    
+ 
+ Chi-square for the   4 constraints:
+      Sampled, desired=  0.6005765       3.812531    
+ 
+ Computing a constrained realization
+ Constraint   1:  Final= 0.30052331    
+ Constraint   2:  Final= 0.25056985    
+ Constraint   3:  Final= 0.20058544    
+ Constraint   4:  Final= 0.15057422    
+ 
+ For random realization at a=1:
+      sigma_delta, sigma_psi=   1.987825       2.877959      Mpc
+      Chisq, dof=  1.6776724E+07    16777211
+      Maximum delta, displacement=   10.89969       6.841536      Mpc
+ 
+ Scaling density and displacements to a=  6.9549389E-02
+ 
+ For a=astart: linear sigma, delmax=  0.1823745       1.000000    
+ RMS, max. 3-D displacement=  0.2640405      0.6276819      Mpc

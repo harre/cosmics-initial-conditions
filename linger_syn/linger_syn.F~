@@ -41,16 +41,6 @@ c  moments.
 c
 	common /starter/ taumax,dk,dlk,akmin,nk,lmax1,ifulbol,kdone
 
-c___________________________________________________________________
-
-	write(*,*) '	'
-	write(*,*) '	'
-	write(*,*) '>>>>>    MAKE SURE YOU START THE PROGRAM WITH'
-	write(*,*) '>>>>>    $./linger_syn | tee lingersynIO.out'
-	write(*,*) '	'
-	write(*,*) '	'
-c____________________________________________________________________
-
 c
 c  Dverk parameters.
 	parameter (tol=1.0d-8,nw=nvar0)
@@ -269,11 +259,23 @@ c  Internal variables.
 	save /store/
 c
 	external dtauda
+
+c___________________________________________________________________
+
+	write(*,*) '	'
+	write(*,*) '	'
+	write(*,*) '>>>>>    MAKE SURE YOU START THE PROGRAM WITH'
+	write(*,*) '>>>>>    $./linger_syn | tee lingersynIO.out'
+	write(*,*) '	'
+	write(*,*) '	'
+c____________________________________________________________________
+
 c
 c  Read initial parameters.
 1	write(*,*)
      2'Enter Omega_b, Omega_c, Omega_v, Omega_nu (e.g. .044 .226 .73 0)'
 	read(*,*) omegab,omegac,omegav,omegan
+	write(*,*) ' Chosen: ', omegab,omegac,omegav,omegan 
 	omega=omegab+omegac+omegav+omegan
 	omegak=1.0d0-omega
 	if (abs(omegak).gt.1.0d-3) then
@@ -285,6 +287,7 @@ c  Read initial parameters.
 2	write(*,*)
      2    'Enter H0, Tcmb, Y_He, N_nu(massive) (e.g. 71 2.725 0.248 0)'
 	read(*,*) h0,tcmb,yhe,nnunr
+	write(*,*) ' Chosen: ',  h0,tcmb,yhe,nnunr 
 	if (h0.lt.25.d0.or.h0.gt.100.d0) then
 	  write(*,*)
      2      '  Warning: H0 has units of km/s/Mpc.  Your value is weird.'
@@ -311,6 +314,7 @@ c  Read initial parameters.
 	write(*,*)
      2    '   or 0 for matter transfer functions only (lmax=100, log k)'
 	read(*,*) ifulbol
+	write(*,*) ' Chosen: ',  ifulbol
 	if (ifulbol.ne.0.and.ifulbol.ne.1) then
 	  write(*,*) '  Illegal choice.  Try again:'
 	  go to 3
@@ -318,12 +322,14 @@ c  Read initial parameters.
 	if (ifulbol.eq.1) then
 	  write(*,*) 'Enter kmax (1/Mpc), nk, zend'
 	  read(*,*) akmax,nk,zend
+	  write(*,*) ' Chosen: ',  akmax,nk,zend
 	  dk=akmax/nk
 	  akmin=dk
 	  lmax1=lmax0
 	else
 	  write(*,*) 'Enter kmin (1/Mpc), kmax (1/Mpc), nk, zend'
 	  read(*,*) akmin,akmax,nk,zend
+	  write(*,*) ' Chosen: ',  akmin,akmax,nk,zend
 	  if (nk.gt.1) then
 	    dlk=log(akmax/akmin)/(nk-1)
 	  else
